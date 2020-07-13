@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from "../../services/state.service";
 import { ActionSheetController } from "@ionic/angular";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-events',
@@ -19,7 +20,7 @@ export class EventsPage implements OnInit {
   /**toggle search */
   searchActive = false;
 
-  constructor(public state: StateService,public actionSheetController:ActionSheetController) { }
+  constructor(public state: StateService,public actionSheetController:ActionSheetController,private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class EventsPage implements OnInit {
   eventDetails(index:number){
 
     console.log(index);
+    this.router.navigate(["/tabs/events/1"])
 
   }
 
