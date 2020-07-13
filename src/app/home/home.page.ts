@@ -8,13 +8,22 @@ import { Router  } from "@angular/router";
 })
 export class HomePage {
 
-  
+    usercred = {
+      username: "",
+      password: ""
+    }  
     constructor(private router: Router) { 
         
     }
 
     navigateToMain(){
+      console.log(this.usercred)
       this.router.navigate(["/tabs"])
+    }
+
+    navigateToRegister(){
+      
+      this.router.navigate(["/register"])
     }
 
     

@@ -38,6 +38,8 @@ export class UsersPage implements OnInit {
     }
   ]
 
+  /**toggle search */
+  searchActive = false;
   constructor() { }
 
   ngOnInit() {

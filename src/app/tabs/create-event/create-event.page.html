@@ -12,46 +12,45 @@
   
     <ion-grid >
       
-      <ion-row >
+      <ion-row *ngIf="event">
         <ion-col  size-md="4" offset-md="4"  >
   
          
   
           <ion-item>
             <ion-label position="stacked">Title</ion-label>
-            <ion-input  clearInput></ion-input>
+            <ion-input  [(ngModel)]="event.title" clearInput></ion-input>
           </ion-item>
           
           <ion-item>
             <ion-label position="stacked">Category</ion-label>
-            <ion-input  clearInput></ion-input>
+            <ion-input [(ngModel)]="event.category" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Venue</ion-label>
-            <ion-input  clearInput></ion-input>
+            <ion-input  [(ngModel)]="event.venue" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Cost</ion-label>
-            <ion-input type="number" clearInput></ion-input>
+            <ion-input [(ngModel)]="event.cost" type="number" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Description</ion-label>
-            <ion-textarea></ion-textarea>
+            <ion-textarea [(ngModel)]="event.description"></ion-textarea>
           </ion-item>
           <ion-item>
             <ion-label>Start Date</ion-label>
-            <ion-datetime displayFormat="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
+            <ion-datetime  [(ngModel)]="event.startDate" displayFormat="D MMM YYYY H:mm" min="1997"  value="2005-06-17T11:06Z"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label>End Date</ion-label>
-            <ion-datetime displayFormat="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
+            <ion-datetime [(ngModel)]="event.endDate" displayFormat="D MMM YYYY H:mm" min="1997"  value="2005-06-17T11:06Z"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Flyer</ion-label>
-            <ion-input type="file" accept="image/*"></ion-input>
+            <ion-input (input)="loadImageFromDevice($event)" type="file" accept="image/*" ></ion-input>
           </ion-item>
-      
-          <ion-button class="ion-margin" id="btn-add" color="main">
+          <ion-button (click)="createEvent()" class="ion-margin" id="btn-add" color="main" >
             <!-- <ion-icon slot="icon-only" name="add-outline"></ion-icon> -->
             create
         </ion-button>

@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EventsPageRoutingModule } from './events-routing.module';
+import { IndividualEventPageRoutingModule } from './individual-event-routing.module';
 
-import { EventsPage } from './events.page';
-import { LongPress } from "../../directives/long-press";
+import { IndividualEventPage } from './individual-event.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventsPageRoutingModule
+    IndividualEventPageRoutingModule
   ],
-  declarations: [EventsPage,LongPress]
+  declarations: [IndividualEventPage]
 })
-export class EventsPageModule {}
+export class IndividualEventPageModule {}

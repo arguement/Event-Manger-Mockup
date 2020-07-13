@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="main">
     <ion-title>
       Login
     </ion-title>
@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <ion-toolbar color="main">
       <ion-title size="large">Login</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -18,7 +18,12 @@
     
   
   <ion-grid >
-    
+    <ion-row> 
+      <ion-col size-md="6" offset-md="6" id="first" (click)="navigateToRegister()" >
+        <span style="font-weight: lighter; letter-spacing: 1px;">not a user create an account</span>
+        
+       </ion-col>
+    </ion-row>
     <ion-row >
       <ion-col  size-md="4" offset-md="4">
 
@@ -26,21 +31,22 @@
 
         <ion-item>
           <ion-label position="stacked">Username</ion-label>
-          <ion-input  clearInput></ion-input>
+          <ion-input [(ngModel)]="usercred.username" clearInput></ion-input>
         </ion-item>
         
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
-          <ion-input  clearInput></ion-input>
+          <ion-input [(ngModel)]="usercred.password" clearInput></ion-input>
         </ion-item>
     
-        <ion-button (click)="navigateToMain()" class="ion-margin" id="btn-add">
+        <ion-button (click)="navigateToMain()" class="ion-margin" id="btn-add" color="main">
           <!-- <ion-icon slot="icon-only" name="add-outline"></ion-icon> -->
           Add
-      </ion-button>
+        </ion-button>
         
       </ion-col>
     </ion-row>
+    
   </ion-grid>
   </div>
 </ion-content>
